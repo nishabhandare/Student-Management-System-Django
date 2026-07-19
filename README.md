@@ -115,16 +115,16 @@ Add your project screenshots here.
 ![Login](screenshots/ST_login.png)
 
 ### Registration Page
-![Registration](screenshots/registration.png)
+![Registration](screenshots/ST_Registration_form.png)
 
 ### User Dashboard
-![User Dashboard](screenshots/ST_Udashboard.png)
+![User Dashboard](screenshots/ST_U_dashboard.png)
 
 ### Admin Dashboard
-![Admin Dashboard](screenshots/dashboard.png)
+![Admin Dashboard](screenshots/ST_dashboard(2).png)
 
 ### Add Student
-![Add Student](screenshots/ST_add_ST.png)
+![Add Student](screenshots/ST_add_ST_from.png)
 
 ### View Students
 ![View Students](screenshots/ST_view.png)
@@ -133,7 +133,7 @@ Add your project screenshots here.
 ![Search Student](screenshots/ST_search.png)
 
 ### Update Student
-![Update Student](screenshots/ST_updatepng)
+![Update Student](screenshots/ST_update.png)
 
 ### Delete Student
 ![Delete Student](screenshots/ST_delete.png)
