@@ -109,6 +109,37 @@ Add your project screenshots here.
 
 ---
 
+## 📸 Project Screenshots
+
+### Login Page
+![Login](screenshots/ST_login.png)
+
+### Registration Page
+![Registration](screenshots/registration.png)
+
+### User Dashboard
+![User Dashboard](screenshots/ST_Udashboard.png)
+
+### Admin Dashboard
+![Admin Dashboard](screenshots/dashboard.png)
+
+### Add Student
+![Add Student](screenshots/ST_add_ST.png)
+
+### View Students
+![View Students](screenshots/ST_view.png)
+
+### Search Student
+![Search Student](screenshots/ST_search.png)
+
+### Update Student
+![Update Student](screenshots/ST_updatepng)
+
+### Delete Student
+![Delete Student](screenshots/ST_delete.png)
+
+---
+
 ## 👩‍💻 Developer
 
 **Nisha Bhandare**
