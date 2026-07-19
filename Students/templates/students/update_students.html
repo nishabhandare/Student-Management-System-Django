@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+body{
+    background: linear-gradient(135deg,#f6c23e,#fd7e14);
+    min-height:100vh;
+}
+
+.card{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+}
+</style>
+
+
+<div class="row justify-content-center">
+
+    <div class="col-md-6">
+
+        <div class="card shadow-lg border-0">
+
+            <div class="card-header bg-warning text-dark text-center">
+                <h3>✏️ Update Student</h3>
+            </div>
+
+
+            <div class="card-body p-4">
+
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+
+                    <div class="d-grid gap-2 mt-3">
+
+
+                        <button type="submit" 
+                                class="btn btn-warning">
+                            💾 Update Student
+                        </button>
+
+
+                        <a href="{% url 'view_students' %}" 
+                           class="btn btn-secondary">
+                            ⬅ Back to Students
+                        </a>
+
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+body{
+    background:linear-gradient(135deg,#4e73df,#36b9cc);
+    min-height:100vh;
+}
+
+.card{
+    border:none;
+    border-radius:20px;
+}
+</style>
+
+<div class="row mb-4">
+
+    <div class="col-md-4">
+        <div class="card shadow text-center border-0 bg-primary text-white">
+            <div class="card-body">
+                <h5>Total Students</h5>
+                <h2>{{ total_students }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow text-center border-0 bg-success text-white">
+            <div class="card-body">
+                <h5>My Students</h5>
+                <h2>{{ my_students }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow text-center border-0 bg-warning">
+            <div class="card-body">
+                <h5>Welcome</h5>
+                <h5>{{ request.user.username }}</h5>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="card shadow-lg border-0">
+
+    <div class="card-header bg-primary text-white text-center">
+        <h3>👨‍🎓 All Students</h3>
+    </div>
+
+
+    <div class="card-body">
+
+
+        <table class="table table-bordered table-hover">
+
+           <thead class="table-primary text-center">
+
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Course</th>
+                    <th>Mobile_No</th>
+                    <th>Added By</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody class="text-center">
+
+            {% for s in students %}
+
+            <tr>
+
+                <td>{{ forloop.counter }}</td>
+                <td>{{ s.name }}</td>
+                <td>{{ s.email }}</td>
+                <td>{{ s.course }}</td>
+                <td>{{ s.mobile }}</td>
+                <td>
+    {% if s.created_by %}
+        {{ s.created_by.username }}
+
+        {% if s.created_by.is_superuser %}
+            <span class="badge bg-warning text-dark">Admin</span>
+        {% else %}
+            <span class="badge bg-success">User</span>
+        {% endif %}
+
+    {% else %}
+        <span class="badge bg-secondary">Old Record</span>
+    {% endif %}
+</td>
+
+        <td>
+
+    <a href="{% url 'view_student' s.id %}" 
+       class="btn btn-info btn-sm me-1">
+        View
+    </a>
+
+    <a href="{% url 'update_student' s.id %}" 
+       class="btn btn-warning btn-sm me-1">
+        Edit
+    </a>
+
+    <a href="{% url 'delete_student' s.id %}" 
+       class="btn btn-danger btn-sm">
+        Delete
+    </a>
+
+</td>
+            </tr>
+
+
+            {% empty %}
+
+            <tr>
+                <td colspan="4" class="text-center">
+                    No Students Found
+                </td>
+            </tr>
+
+
+            {% endfor %}
+
+
+            </tbody>
+
+
+        </table>
+
+
+    </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+
+body{
+    background: linear-gradient(135deg,#4e73df,#1cc88a);
+    min-height:100vh;
+}
+
+.card{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.card-header{
+    border:none;
+    padding:20px;
+}
+
+.form-control{
+    border-radius:10px;
+}
+
+.btn{
+    border-radius:10px;
+    font-weight:600;
+}
+</style>
+
+<div class="row justify-content-center align-items-center" style="min-height:85vh;">
+
+    <div class="col-md-6">
+
+        <div class="card shadow-lg">
+
+            <div class="card-header bg-success text-white text-center">
+                <h2>➕ Add Student</h2>
+            </div>
+
+            <div class="card-body p-4">
+
+                <form method="POST">
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+                    <div class="d-grid gap-2 mt-3">
+
+                        <button type="submit" class="btn btn-success btn-lg">
+                            💾 Save Student
+                        </button>
+
+                        <a href="{% url 'view_students' %}" class="btn btn-secondary btn-lg">
+                            ⬅ Back to Students
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

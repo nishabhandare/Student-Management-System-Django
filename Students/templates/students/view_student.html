@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+body{
+    background: linear-gradient(135deg,#6f42c1,#4e73df);
+    min-height:100vh;
+}
+
+.card{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+}
+</style>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+
+        <div class="card shadow-lg border-0">
+
+            <div class="card-header bg-primary text-white text-center">
+                <h3>🎓 Student Details</h3>
+            </div>
+
+            <div class="card-body">
+
+                <table class="table table-bordered">
+
+                    <tr>
+                        <th width="35%">Name</th>
+                        <td>{{ student.name }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Email</th>
+                        <td>{{ student.email }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Course</th>
+                        <td>{{ student.course }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Mobile</th>
+                        <td>{{ student.mobile }}</td>
+                    </tr>
+
+                </table>
+
+                <div class="text-center mt-4">
+
+                    <a href="{% url 'update_student' student.id %}" class="btn btn-warning">
+                        ✏ Edit
+                    </a>
+
+                    <a href="{% url 'view_students' %}" class="btn btn-secondary">
+                        ⬅ Back
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
